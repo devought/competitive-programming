@@ -1,0 +1,9 @@
+node_modules
+src/main.ts
+*.js
+*.log
+*.tmp
+.DS_Store
+*.cpuprofile
+*.txt
+

@@ -155,3 +155,14 @@ export const nextPowerOfTwo = function (n: number) {
 	}
 	return result;
 };
+
+// Обнуляем последний 1 бит каждый раз
+export const countSetBits = function (a: number) {
+	if (a % 1 > 0) return 0;
+	let bits = 0;
+	while (a > 0) {
+		a = a & (a - 1);
+		bits++;
+	}
+	return bits;
+};

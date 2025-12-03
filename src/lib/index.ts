@@ -17,6 +17,7 @@ export {
 	isPowerOfFour,
 	evenSum,
 	oddSum,
+	countSetBits,
 } from "./algorithms/numbers";
 
 export {

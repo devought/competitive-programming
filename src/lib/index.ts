@@ -44,6 +44,7 @@ export {
 	search,
 	hasDuplicates,
 	swap,
+	subsets,
 } from "./algorithms/array";
 
 export { Vector__ } from "./data-structures/vector";

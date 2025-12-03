@@ -45,3 +45,21 @@ export const hasDuplicates = function <T>(arr: T[]) {
 export const swap = function <T>(arr: T[], i: number, j: number) {
 	[arr[i], arr[j]] = [arr[j], arr[i]];
 };
+
+export const subsets = function <T>(arr: T[]) {
+	const res: T[][] = [];
+	const stack: { i: number; slate: T[] }[] = [{ i: 0, slate: [] }];
+	while (stack.length > 0) {
+		const { i, slate } = stack.pop()!;
+		if (i === arr.length) {
+			res.push(slate.slice());
+		} else {
+			stack.push({ i: i + 1, slate });
+			stack.push({
+				i: i + 1,
+				slate: [...slate, arr[i]],
+			});
+		}
+	}
+	return res;
+};

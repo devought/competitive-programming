@@ -4,7 +4,7 @@ export {
 	lcm,
 	lcms,
 	isPrime,
-	nPrimes,
+	generatePrimes,
 	primesUntil,
 	primeFactors,
 	equals,
@@ -12,6 +12,11 @@ export {
 	getSquareSum,
 	getCubeSum,
 	fib,
+	isPowerOfTwo,
+	nextPowerOfTwo,
+	isPowerOfFour,
+	evenSum,
+	oddSum,
 } from "./algorithms/numbers";
 
 export {
@@ -19,9 +24,11 @@ export {
 	isLowercase,
 	isUppercase,
 	isLetter,
+	isSpecialChar,
 	palindrome,
 	capitalize,
 	anagram,
+	filterDuplicates,
 } from "./algorithms/strings";
 
 export {
@@ -31,7 +38,13 @@ export {
 	sameType,
 } from "./algorithms/general";
 
-export { isMonotonic, isSorted, search } from "./algorithms/array";
+export {
+	isMonotonic,
+	isSorted,
+	search,
+	hasDuplicates,
+	swap,
+} from "./algorithms/array";
 
 export { Vector__ } from "./data-structures/vector";
 export { Stack__ } from "./data-structures/stack";
@@ -42,11 +55,16 @@ export { UnionFind__ } from "./data-structures/union-find";
 export { LRUCache__ } from "./data-structures/lru-cache";
 
 export const MOD = 1_000_000_007;
-export const POSITIVE_INFINITY = Number.POSITIVE_INFINITY;
-export const NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY;
-export const PI = Math.PI;
-export const UPPERCASE_ASCII = 65;
-export const LOWERCASE_ASCII = 97;
+
+export const ALPHABET_SIZE = 26;
+export const UPPERCASE_ASCII_START = 65;
+export const UPPERCASE_ASCII_END = 90;
+export const LOWERCASE_ASCII_START = 97;
+export const LOWERCASE_ASCII_END = 122;
+
+export const SPECIAL_CHARS = new Set([
+	33, 35, 36, 37, 38, 40, 41, 42, 43, 45, 64, 94,
+]);
 
 export const DIRS = [
 	[0, 1],

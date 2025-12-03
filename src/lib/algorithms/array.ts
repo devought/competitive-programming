@@ -32,3 +32,16 @@ export const isMonotonic = function (arr: number[]) {
 	}
 	return inc || dec;
 };
+
+export const hasDuplicates = function <T>(arr: T[]) {
+	const set = new Set<T>();
+	for (const item of arr) {
+		if (set.has(item)) return true;
+		set.add(item);
+	}
+	return false;
+};
+
+export const swap = function <T>(arr: T[], i: number, j: number) {
+	[arr[i], arr[j]] = [arr[j], arr[i]];
+};

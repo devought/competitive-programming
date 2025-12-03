@@ -12,6 +12,36 @@ npm i -D @types/node esbuild ts-node typescript
 tsc --init
 ```
 
+#### `launch.json` for debug
+
+```json
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Debug CP (ts-node)",
+			"runtimeExecutable": "node",
+			"runtimeArgs": ["-r", "ts-node/register/transpile-only"],
+			"program": "${workspaceFolder}/src/main.ts",
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"env": {
+				"DEBUG_FILE_INPUT": "${workspaceFolder}/src/test.txt",
+				"TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+			},
+			"sourceMaps": true,
+			"resolveSourceMapLocations": [
+				"${workspaceFolder}/**",
+				"!**/node_modules/**"
+			]
+		}
+	]
+}
+```
+
 #### `tsconfig.json`
 
 ```json
@@ -29,24 +59,6 @@ tsc --init
 	},
 	"include": ["src/**/*", "*.ts"]
 }
-```
-
----
-
-### 📁 Folder Structure
-
-```
-.
-├── node_modules
-├── dist
-├── src/
-│   └── main.ts
-├── test.txt
-├── .gitignore
-├── .prettierc
-├── package.json
-├── package-lock.json
-└── tsconfig.json
 ```
 
 ---
@@ -80,7 +92,15 @@ Add:
 		"body": [
 			"import * as fs from \"fs\";",
 			"",
-			"const data = fs.readFileSync(0, \"utf-8\");",
+			"const readInput = () => {",
+			"    const debug = process.env.DEBUG_FILE_INPUT;",
+			"    if (debug) {",
+			"        return fs.readFileSync(debug, \"utf-8\");",
+			"    }",
+			"    return fs.readFileSync(0, \"utf-8\");",
+			"};",
+			"",
+			"const data = readInput();",
 			"const tokens = data.split(/\\s+/).filter(Boolean);",
 			"const lines = data.split(/\\r?\\n/);",
 			"",
@@ -99,7 +119,7 @@ Add:
 			"const intline = () => line().trim().split(/\\s+/).map(Number);",
 			"",
 			"let out = '';",
-			"const write = (s: any) => (out += s + \"\\n\");",
+			"const write = (...s: any[]) => (out += s.join(' ') + \"\\n\");",
 			"const flush = () => process.stdout.write(out);",
 			"",
 			"function solve() {",
@@ -113,7 +133,10 @@ Add:
 			"",
 			"main();"
 		],
-		"description": "TypeScript template with fast I/O for Codeforces/Atcoder/CSES"
+		"description": "ICPC/Codeforces TypeScript template with fast I/O + debug input support"
 	}
 }
 ```
+
+- _Create a test.txt and main.ts file in src/_
+- _Good luck with coding_

@@ -1,9 +1,10 @@
 node_modules
+dist
 src/main.ts
 *.js
 *.log
 *.tmp
-.DS_Store
 *.cpuprofile
 *.txt
+.DS_Store
 

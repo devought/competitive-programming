@@ -1,3 +1,5 @@
+import { SPECIAL_CHARS } from "..";
+
 export const isDigit = function (n: string) {
 	const ascii = n.charCodeAt(0);
 	return ascii >= 48 && ascii <= 57;
@@ -14,7 +16,11 @@ export const isUppercase = function (n: string) {
 };
 
 export const isLetter = function (n: string) {
-	return n.length > 0 && (isLowercase(n) || isUppercase(n));
+	return isLowercase(n) || isUppercase(n);
+};
+
+export const isSpecialChar = function (n: string) {
+	return SPECIAL_CHARS.has(n.charCodeAt(0));
 };
 
 export const capitalize = function (s: string) {
@@ -53,3 +59,10 @@ export const anagram = function (s: string, t: string) {
 	}
 	return true;
 };
+
+export function filterDuplicates(str: string, sorted: boolean = false) {
+	const chars = new Set(str);
+	return sorted
+		? Array.from(chars).sort().join("")
+		: Array.from(chars).join("");
+}

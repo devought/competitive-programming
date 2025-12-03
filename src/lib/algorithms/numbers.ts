@@ -39,7 +39,7 @@ export const isPrime = function (n: number) {
 	return true;
 };
 
-export const nPrimes = function (n: number) {
+export const generatePrimes = function (n: number) {
 	if (n <= 0) return [];
 	const ans = [2];
 	for (let i = 3; ans.length < n; i += 2) {
@@ -124,4 +124,34 @@ export const fib = function (n: number): number {
 	}
 
 	return s;
+};
+
+export const oddSum = function (n: number) {
+	// 1 3 5 -> 9 which is 3^2
+	// 1 3 5 7 9 -> 25 which is 5^2
+
+	return n * n;
+};
+
+export const evenSum = function (n: number) {
+	// 2 4 6 -> 2 * (1 + 2 + 3) -> you know the formula for expression in brackets
+	return n * (n + 1);
+};
+
+export const isPowerOfTwo = function (n: number) {
+	return n > 0 && ((n - 1) & n) === 0;
+};
+
+export const isPowerOfFour = function (n: number) {
+	return isPowerOfTwo(n) && n % 3 === 0;
+};
+
+export const nextPowerOfTwo = function (n: number) {
+	if (n > 0 && (n & (n - 1)) === 0) return n;
+	let result = 1;
+	while (n > 0) {
+		result = result << 1;
+		n = n >> 1;
+	}
+	return result;
 };

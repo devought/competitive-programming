@@ -6,5 +6,9 @@ src/main.ts
 *.tmp
 *.cpuprofile
 *.txt
+*.cpp
+*.py
+*.ipynb
+*.go
 .DS_Store
 

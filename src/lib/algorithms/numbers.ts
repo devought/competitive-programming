@@ -127,14 +127,10 @@ export const fib = function (n: number): number {
 };
 
 export const oddSum = function (n: number) {
-	// 1 3 5 -> 9 which is 3^2
-	// 1 3 5 7 9 -> 25 which is 5^2
-
 	return n * n;
 };
 
 export const evenSum = function (n: number) {
-	// 2 4 6 -> 2 * (1 + 2 + 3) -> you know the formula for expression in brackets
 	return n * (n + 1);
 };
 
@@ -156,9 +152,7 @@ export const nextPowerOfTwo = function (n: number) {
 	return result;
 };
 
-// Обнуляем последний 1 бит каждый раз
 export const countSetBits = function (a: number) {
-	if (a % 1 > 0) return 0;
 	let bits = 0;
 	while (a > 0) {
 		a = a & (a - 1);

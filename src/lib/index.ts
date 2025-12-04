@@ -26,9 +26,10 @@ export {
 	isUppercase,
 	isLetter,
 	isSpecialChar,
-	palindrome,
+	isPalindrome,
+	isAnagram,
+	isPermutation,
 	capitalize,
-	anagram,
 	filterDuplicates,
 } from "./algorithms/strings";
 

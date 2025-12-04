@@ -10,5 +10,7 @@ src/main.ts
 *.py
 *.ipynb
 *.go
+*.md
+!README.md
 .DS_Store
 

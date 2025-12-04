@@ -30,7 +30,7 @@ export const capitalize = function (s: string) {
 	return chars.join("");
 };
 
-export function palindrome(s: string | number): boolean {
+export function isPalindrome(s: string | number): boolean {
 	const helper = (s: string) => {
 		const len = s.length;
 		for (let i = 0; i < len / 2; i++) {
@@ -47,7 +47,7 @@ export function palindrome(s: string | number): boolean {
 	return false;
 }
 
-export const anagram = function (s: string, t: string) {
+export const isAnagram = function (s: string, t: string) {
 	if (s.length !== t.length) return false;
 	const map = new Map<string, number>();
 	for (let i = 0; i < s.length; i++) {
@@ -60,9 +60,55 @@ export const anagram = function (s: string, t: string) {
 	return true;
 };
 
-export function filterDuplicates(str: string, sorted: boolean = false) {
+export const filterDuplicates = function (
+	str: string,
+	sorted: boolean = false,
+) {
 	const chars = new Set(str);
 	return sorted
 		? Array.from(chars).sort().join("")
 		: Array.from(chars).join("");
-}
+};
+
+export const isPermutation = function (s: string, t: string) {
+	if (s.length > t.length) return false;
+	if (s.length === t.length) return isAnagram(s, t);
+
+	const countS = new Map<string, number>();
+	const countT = new Map<string, number>();
+
+	function isValid(
+		countS: Map<string, number>,
+		countT: Map<string, number>,
+	) {
+		if (countS.size !== countT.size) return false;
+		for (const [sKey, sValue] of countS) {
+			const tValue = countT.get(sKey);
+			if (tValue === undefined || tValue !== sValue) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	for (let i = 0; i < s.length; i++) {
+		countS.set(s[i], (countS.get(s[i]) ?? 0) + 1);
+		countT.set(t[i], (countT.get(t[i]) ?? 0) + 1);
+	}
+
+	if (isValid(countS, countT)) return true;
+
+	for (let i = s.length; i < t.length; i++) {
+		const head = t[i - s.length];
+		const current = t[i];
+
+		countT.set(head, countT.get(head)! - 1);
+		if (countT.get(head)! === 0) {
+			countT.delete(head);
+		}
+		countT.set(current, (countT.get(current) ?? 0) + 1);
+
+		if (isValid(countS, countT)) return true;
+	}
+	return false;
+};

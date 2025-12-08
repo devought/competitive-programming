@@ -18,6 +18,7 @@ export {
 	evenSum,
 	oddSum,
 	countSetBits,
+	pow,
 } from "./algorithms/numbers";
 
 export {

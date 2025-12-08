@@ -1,3 +1,5 @@
+import { MOD } from "..";
+
 export const gcd = function (a: number, b: number) {
 	while (b) {
 		[a, b] = [b, a % b];
@@ -159,4 +161,15 @@ export const countSetBits = function (a: number) {
 		bits++;
 	}
 	return bits;
+};
+
+export const pow = function (base: number, exponent: number) {
+	base %= MOD;
+	let res = 1;
+	while (exponent) {
+		if (exponent & 1) res = (res * base) % MOD;
+		base = (base * base) % MOD;
+		exponent >>= 1;
+	}
+	return res;
 };

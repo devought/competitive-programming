@@ -78,7 +78,7 @@ tsc --init
 
 ---
 
-### 📝 VSCode Snippet — ICPC TypeScript Template
+### 📝 VSCode Snippet — Codeforces TypeScript Template
 
 Create file:
 `~/.config/Code/User/snippets/typescript.json`
@@ -87,8 +87,8 @@ Add:
 
 ```json
 {
-	"ICPC TypeScript Template": {
-		"prefix": "icpc",
+	"TypeScript Template": {
+		"prefix": "ts",
 		"body": [
 			"import * as fs from \"fs\";",
 			"",
@@ -133,10 +133,96 @@ Add:
 			"",
 			"main();"
 		],
-		"description": "ICPC/Codeforces TypeScript template with fast I/O + debug input support"
+		"description": "Codeforces TypeScript template with fast I/O + debug input support"
 	}
 }
 ```
 
 - _Create a test.txt and main.ts file in src/_
-- _Good luck with coding_
+
+### 📝 VSCode Settings
+
+```json
+{
+	// ---- Editor ----
+	"editor.autoClosingBrackets": "always",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"editor.cursorStyle": "line",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.fontFamily": "Lab Mono",
+	"editor.fontWeight": "599",
+	"editor.formatOnSave": true,
+	"editor.indentSize": "tabSize",
+	"editor.largeFileOptimizations": true,
+	"editor.lineHeight": 1.25,
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 4,
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"editor.wordWrap": "on",
+
+	// ---- File Associations ----
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+
+	// ---- File Watcher / Search Exclude ----
+	"files.watcherExclude": {
+		"**/node_modules": true,
+		"**/.git": true,
+		"**/dist/**": true,
+		"**/build/**": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/.git": true,
+		"**/dist/**": true,
+		"**/build/**": true
+	},
+
+	// ---- Explorer / Workbench UI ----
+	"explorer.compactFolders": false,
+	"explorer.confirmDelete": false,
+	"explorer.confirmPasteNative": false,
+	"explorer.confirmDragAndDrop": false,
+	"workbench.enableExperiments": false,
+	"workbench.fontAliasing": "none",
+	"workbench.tree.indent": 20,
+	"workbench.tree.renderIndentGuides": "none",
+
+	// ---- Terminal ----
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontWeight": "599",
+
+	// ---- Language-Specific Formatters ----
+	"[go]": { "editor.defaultFormatter": "golang.go" },
+	"[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
+	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
+
+	// ---- Typescript ----
+	"typescript.updateImportsOnFileMove.enabled": "always",
+
+	// ---- Extensions Behavior ----
+	"extensions.autoUpdate": true,
+	"extensions.ignoreRecommendations": true,
+	"go.toolsManagement.autoUpdate": true,
+	"liveServer.settings.donotShowInfoMsg": true,
+
+	// ---- Misc ----
+	"json.schemaDownload.enable": true,
+	"notebook.formatOnSave.enabled": true,
+	"update.mode": "default",
+	"window.zoomLevel": 2,
+
+	// ---- Hide UI Elements -----
+	"window.commandCenter": false,
+	"workbench.editor.showTabs": "multiple",
+	"breadcrumbs.enabled": false,
+	"redhat.telemetry.enabled": true,
+	"workbench.iconTheme": "symbols",
+	"symbols.hidesExplorerArrows": true,
+	"workbench.colorTheme": "Default Dark+"
+}
+```

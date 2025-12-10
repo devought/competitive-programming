@@ -149,15 +149,14 @@ Add:
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
-	"editor.cursorStyle": "line",
+	"editor.fontFamily": "JetBrains Mono",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.fontWeight": "599",
-	"editor.indentSize": "tabSize",
 	"editor.largeFileOptimizations": true,
 	"editor.tabCompletion": "on",
-	"editor.tabSize": 4,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"editor.wordWrap": "on",
+	"editor.formatOnSave": true,
 
 	// ---- File Associations ----
 	"files.associations": {
@@ -189,7 +188,7 @@ Add:
 
 	// ---- Terminal ----
 	"terminal.integrated.cursorStyle": "line",
-	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.fontWeight": "599",
 
 	// ---- Language-Specific Formatters ----
@@ -211,13 +210,6 @@ Add:
 	"notebook.formatOnSave.enabled": true,
 	"update.mode": "default",
 	"window.zoomLevel": 2,
-
-	// ---- Hide UI Elements -----
-	"window.commandCenter": false,
-	"workbench.editor.showTabs": "multiple",
-	"breadcrumbs.enabled": false,
-	"redhat.telemetry.enabled": true,
-	"workbench.colorTheme": "Default Dark+",
-	"editor.formatOnSave": true
+	"editor.fontSize": 14
 }
 ```

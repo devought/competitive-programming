@@ -151,12 +151,9 @@ Add:
 	},
 	"editor.cursorStyle": "line",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.fontFamily": "Lab Mono",
 	"editor.fontWeight": "599",
-	"editor.formatOnSave": true,
 	"editor.indentSize": "tabSize",
 	"editor.largeFileOptimizations": true,
-	"editor.lineHeight": 1.25,
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 4,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
@@ -187,7 +184,6 @@ Add:
 	"explorer.confirmPasteNative": false,
 	"explorer.confirmDragAndDrop": false,
 	"workbench.enableExperiments": false,
-	"workbench.fontAliasing": "none",
 	"workbench.tree.indent": 20,
 	"workbench.tree.renderIndentGuides": "none",
 
@@ -221,8 +217,7 @@ Add:
 	"workbench.editor.showTabs": "multiple",
 	"breadcrumbs.enabled": false,
 	"redhat.telemetry.enabled": true,
-	"workbench.iconTheme": "symbols",
-	"symbols.hidesExplorerArrows": true,
-	"workbench.colorTheme": "Default Dark+"
+	"workbench.colorTheme": "Default Dark+",
+	"editor.formatOnSave": true
 }
 ```

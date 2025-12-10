@@ -1,5 +1,3 @@
-import { SPECIAL_CHARS } from "..";
-
 export const isDigit = function (n: string) {
 	const ascii = n.charCodeAt(0);
 	return ascii >= 48 && ascii <= 57;
@@ -17,10 +15,6 @@ export const isUppercase = function (n: string) {
 
 export const isLetter = function (n: string) {
 	return isLowercase(n) || isUppercase(n);
-};
-
-export const isSpecialChar = function (n: string) {
-	return SPECIAL_CHARS.has(n.charCodeAt(0));
 };
 
 export const capitalize = function (s: string) {
@@ -77,10 +71,7 @@ export const isPermutation = function (s: string, t: string) {
 	const countS = new Map<string, number>();
 	const countT = new Map<string, number>();
 
-	function isValid(
-		countS: Map<string, number>,
-		countT: Map<string, number>,
-	) {
+	function isValid(countS: Map<string, number>, countT: Map<string, number>) {
 		if (countS.size !== countT.size) return false;
 		for (const [sKey, sValue] of countS) {
 			const tValue = countT.get(sKey);

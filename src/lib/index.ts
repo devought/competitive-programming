@@ -26,7 +26,6 @@ export {
 	isLowercase,
 	isUppercase,
 	isLetter,
-	isSpecialChar,
 	isPalindrome,
 	isAnagram,
 	isPermutation,
@@ -59,23 +58,6 @@ export { UnionFind__ } from "./data-structures/union-find";
 export { LRUCache__ } from "./data-structures/lru-cache";
 
 export const MOD = 1_000_000_007;
-
-export const ALPHABET_SIZE = 26;
-export const UPPERCASE_ASCII_START = 65;
-export const UPPERCASE_ASCII_END = 90;
-export const LOWERCASE_ASCII_START = 97;
-export const LOWERCASE_ASCII_END = 122;
-
-export const SPECIAL_CHARS = new Set([
-	33, 35, 36, 37, 38, 40, 41, 42, 43, 45, 64, 94,
-]);
-
-export const DIRS = [
-	[0, 1],
-	[1, 0],
-	[0, -1],
-	[-1, 0],
-];
 
 export class ListNode {
 	val: number;

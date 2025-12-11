@@ -52,6 +52,7 @@ export {
 
 export { Vector } from "./data-structures/vector";
 export { Stack } from "./data-structures/stack";
+export { List } from "./data-structures/list";
 export { Queue } from "./data-structures/queue";
 export { Deque } from "./data-structures/deque";
 export { Heap } from "./data-structures/heap";

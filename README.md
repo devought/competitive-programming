@@ -168,6 +168,7 @@ Add:
 	"editor.largeFileOptimizations": true,
 	"editor.tabCompletion": "on",
 	"editor.cursorStyle": "underline",
+	"editor.lineHeight": 1.2,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"editor.wordWrap": "on",
 	"editor.formatOnSave": true,
@@ -220,7 +221,7 @@ Add:
 	"json.schemaDownload.enable": true,
 	"notebook.formatOnSave.enabled": true,
 	"update.mode": "default",
-	"window.zoomLevel": 2,
+	"window.zoomLevel": 1,
 	"workbench.fontAliasing": "none",
 
 	// ---- Hide UI Elements ----
@@ -228,6 +229,6 @@ Add:
 	"workbench.editor.showTabs": "single",
 	"breadcrumbs.enabled": false,
 	"editor.minimap.autohide": true,
-	"workbench.colorTheme": "Default Dark+"
+	"redhat.telemetry.enabled": true
 }
 ```

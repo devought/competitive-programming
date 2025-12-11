@@ -1,6 +1,6 @@
 import { DoubleNode } from "..";
 
-export class LRUCache__ {
+export class LRUCache {
 	private capacity: number;
 	private map = new Map<number, DoubleNode>();
 	private head: DoubleNode;

@@ -38,6 +38,7 @@ export {
 	deepEqual,
 	isPrimitive,
 	sameType,
+	reverseList,
 } from "./algorithms/general";
 
 export {
@@ -49,13 +50,13 @@ export {
 	subsets,
 } from "./algorithms/array";
 
-export { Vector__ } from "./data-structures/vector";
-export { Stack__ } from "./data-structures/stack";
-export { Queue__ } from "./data-structures/queue";
-export { Deque__ } from "./data-structures/deque";
-export { Heap__ } from "./data-structures/heap";
-export { UnionFind__ } from "./data-structures/union-find";
-export { LRUCache__ } from "./data-structures/lru-cache";
+export { Vector } from "./data-structures/vector";
+export { Stack } from "./data-structures/stack";
+export { Queue } from "./data-structures/queue";
+export { Deque } from "./data-structures/deque";
+export { Heap } from "./data-structures/heap";
+export { UnionFind } from "./data-structures/union-find";
+export { LRUCache } from "./data-structures/lru-cache";
 
 export const MOD = 1_000_000_007;
 

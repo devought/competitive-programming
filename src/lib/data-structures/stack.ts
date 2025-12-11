@@ -1,4 +1,4 @@
-export class Stack__<T> {
+export class Stack<T> {
 	private data: T[] = [];
 
 	push(value: T): void {

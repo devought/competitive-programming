@@ -1,4 +1,4 @@
-export class Queue__<T> {
+export class Queue<T> {
 	private data: T[] = [];
 	private head = 0;
 

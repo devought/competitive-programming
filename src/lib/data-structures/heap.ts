@@ -1,4 +1,4 @@
-export class Heap__<T> {
+export class Heap<T> {
 	private heap: T[] = [];
 	// cb(a, b) === true  =>  b имеет более высокий приоритет, чем a
 	private cb: (a: T, b: T) => boolean;

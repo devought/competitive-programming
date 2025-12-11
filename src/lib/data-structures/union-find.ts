@@ -1,4 +1,4 @@
-export class UnionFind__ {
+export class UnionFind {
 	private parent: number[];
 	private rank: number[];
 	private size: number[];

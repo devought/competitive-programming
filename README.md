@@ -63,15 +63,31 @@ tsc --init
 
 ---
 
+### 📦 Deps:
+
+```json
+{
+	"devDependencies": {
+		"@types/node": "^24.10.1",
+		"esbuild": "^0.27.0",
+		"prettier": "^3.7.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
+	}
+}
+```
+
+---
+
 ### 🚀 NPM Scripts
 
 ```json
 {
 	"scripts": {
+		"format": "prettier --write \"src/**/*.ts\"",
 		"test": "ts-node src/main.ts < src/test.txt",
-		"copy": "npx esbuild src/main.ts --bundle --platform=node --target=node18 --outfile=src/main.js --minify && cat src/main.js | pbcopy && rm src/main.js",
-		"bundle": "npx esbuild src/main.ts --bundle --platform=node --target=node18 --outfile=src/main.js --minify",
-		"stress": "chmod +x src/scripts/benchmark.sh && ./src/scripts/benchmark.sh"
+		"bundle": "npx esbuild src/main.ts --bundle --platform=node --target=node18 --outfile=src/main.js --minify && cat src/main.js | pbcopy && rm src/main.js",
+		"benchmark": "chmod +x src/scripts/benchmark.sh && ./src/scripts/benchmark.sh"
 	}
 }
 ```
@@ -108,15 +124,12 @@ Add:
 			"let l = 0;",
 			"",
 			"const read = () => tokens[t++];",
+			"const readline = () => line().trim().split(/\\s+/).map(Number);",
 			"const int = () => Number(read());",
 			"const float = () => parseFloat(read());",
 			"const bigint = () => BigInt(read());",
 			"const line = () => lines[l++];",
-			"const readSafe = () => (t >= tokens.length ? null : tokens[t++]);",
-			"const readlineSafe = () => (l >= lines.length ? null : lines[l++]);",
-			"const has = () => t < tokens.length;",
-			"const array = (n: number) => Array.from({ length: n }, () => int());",
-			"const intline = () => line().trim().split(/\\s+/).map(Number);",
+			"const ints = (n: number) => Array.from({ length: n }, () => int());",
 			"",
 			"let out = '';",
 			"const write = (...s: any[]) => (out += s.join(' ') + \"\\n\");",
@@ -149,11 +162,12 @@ Add:
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
-	"editor.fontFamily": "JetBrains Mono",
+	// "editor.fontFamily": "",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.fontWeight": "599",
+	"editor.fontFamily": "Lab Mono",
 	"editor.largeFileOptimizations": true,
 	"editor.tabCompletion": "on",
+	"editor.cursorStyle": "underline",
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"editor.wordWrap": "on",
 	"editor.formatOnSave": true,
@@ -187,12 +201,10 @@ Add:
 	"workbench.tree.renderIndentGuides": "none",
 
 	// ---- Terminal ----
-	"terminal.integrated.cursorStyle": "line",
-	"terminal.integrated.fontSize": 14,
-	"terminal.integrated.fontWeight": "599",
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.fontSize": 12,
 
 	// ---- Language-Specific Formatters ----
-	"[go]": { "editor.defaultFormatter": "golang.go" },
 	"[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
 	"[python]": { "editor.defaultFormatter": "ms-python.black-formatter" },
 
@@ -202,7 +214,6 @@ Add:
 	// ---- Extensions Behavior ----
 	"extensions.autoUpdate": true,
 	"extensions.ignoreRecommendations": true,
-	"go.toolsManagement.autoUpdate": true,
 	"liveServer.settings.donotShowInfoMsg": true,
 
 	// ---- Misc ----
@@ -210,6 +221,13 @@ Add:
 	"notebook.formatOnSave.enabled": true,
 	"update.mode": "default",
 	"window.zoomLevel": 2,
-	"editor.fontSize": 14
+	"workbench.fontAliasing": "none",
+
+	// ---- Hide UI Elements ----
+	"window.commandCenter": false,
+	"workbench.editor.showTabs": "single",
+	"breadcrumbs.enabled": false,
+	"editor.minimap.autohide": true,
+	"workbench.colorTheme": "Default Dark+"
 }
 ```

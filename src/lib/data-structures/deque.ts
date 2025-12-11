@@ -1,4 +1,4 @@
-export class Deque__<T> {
+export class Deque<T> {
 	private buffer: T[];
 	private _size: number = 0;
 	private head: number = 0;

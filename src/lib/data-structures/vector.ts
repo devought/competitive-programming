@@ -1,4 +1,4 @@
-export class Vector__<T> {
+export class Vector<T> {
 	private _size: number = 0;
 	private _capacity: number = 0;
 	private buffer: T[];

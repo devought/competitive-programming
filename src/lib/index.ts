@@ -19,6 +19,7 @@ export {
 	oddSum,
 	countSetBits,
 	pow,
+	sameNumbers,
 } from "./algorithms/numbers";
 
 export {
@@ -38,7 +39,6 @@ export {
 	deepEqual,
 	isPrimitive,
 	sameType,
-	reverseList,
 } from "./algorithms/general";
 
 export {
@@ -49,6 +49,8 @@ export {
 	swap,
 	subsets,
 } from "./algorithms/array";
+
+export { reverseList, getListLength } from "./algorithms/list";
 
 export { Vector } from "./data-structures/vector";
 export { Stack } from "./data-structures/stack";

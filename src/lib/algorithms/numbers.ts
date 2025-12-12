@@ -173,3 +173,7 @@ export const pow = function (base: number, exponent: number) {
 	}
 	return res;
 };
+
+export const sameNumbers = function (...nums: number[]) {
+	return nums.every((v) => v == nums[0]);
+};

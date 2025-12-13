@@ -19,7 +19,7 @@ export {
 	oddSum,
 	countSetBits,
 	pow,
-	sameNumbers,
+	sameInts,
 } from "./algorithms/numbers";
 
 export {
@@ -32,6 +32,7 @@ export {
 	isPermutation,
 	capitalize,
 	filterDuplicates,
+	unicodeLength,
 } from "./algorithms/strings";
 
 export {
@@ -39,6 +40,9 @@ export {
 	deepEqual,
 	isPrimitive,
 	sameType,
+	reverseList,
+	hasCycle,
+	listSize,
 } from "./algorithms/general";
 
 export {
@@ -49,8 +53,6 @@ export {
 	swap,
 	subsets,
 } from "./algorithms/array";
-
-export { reverseList, getListLength } from "./algorithms/list";
 
 export { Vector } from "./data-structures/vector";
 export { Stack } from "./data-structures/stack";

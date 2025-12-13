@@ -103,3 +103,7 @@ export const isPermutation = function (s: string, t: string) {
 	}
 	return false;
 };
+
+export const unicodeLength = function (str: string) {
+	return [...new Intl.Segmenter().segment(str)].length;
+};

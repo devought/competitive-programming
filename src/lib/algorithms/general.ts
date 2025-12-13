@@ -1,3 +1,5 @@
+import { ListNode } from "..";
+
 export const sameType = function (a: any, b: any) {
 	return typeof a === typeof b;
 };
@@ -48,4 +50,51 @@ export const countOccurence = function <T>(arr: T[]) {
 		map.set(arr[i], (map.get(arr[i]) ?? 0) + 1);
 	}
 	return map;
+};
+
+export const reverseList = function (head: ListNode | null) {
+	let previous = null;
+	while (head) {
+		const temp: ListNode | null = head.next;
+		head.next = previous;
+		previous = head;
+		head = temp;
+	}
+	return previous;
+};
+
+export const listSize = function (head: ListNode | null) {
+	if (head === null) {
+		return 0;
+	}
+
+	let currentNode: ListNode | null = head;
+	let length = 0;
+
+	while (currentNode) {
+		length++;
+		currentNode = currentNode.next;
+	}
+
+	return length;
+};
+
+export const hasCycle = function (head: ListNode | null) {
+	if (head === null) {
+		return false;
+	}
+
+	let slow: ListNode = head;
+	let fast: ListNode | null = head;
+
+	while (fast && fast.next) {
+		fast = fast.next.next;
+		slow = slow.next!;
+
+		if (slow === fast) {
+			return true;
+		}
+	}
+
+	return false;
 };
